@@ -7,7 +7,7 @@ env:
 
   # 若果使用 Algolia，请在 secrets 配置
   # APPLICATION_ID、SEARCH_API_KEY、WRITE_API_KEY、INDEX_NAME 和 START_URLS
-  # 然后取消下面注释，并将 jobs 中 algolia 的步骤中的 if 的值设置为 true
+  # 然后取消下面注释
   # SEARCH_PROVIDER: "algolia"  # 默认为 "local"
   APPLICATION_ID: ${{ secrets.APPLICATION_ID }}
   SEARCH_API_KEY: ${{ secrets.SEARCH_API_KEY }}
@@ -83,7 +83,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: deploy
     # 默认不启用，需要时删除下面的条件或将其设为 true
-    if: false
+    if: env.SEARCH_PROVIDER == 'algolia'
     steps:
       - uses: actions/checkout@v4
 
