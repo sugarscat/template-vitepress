@@ -5,6 +5,7 @@ import DefaultTheme from "vitepress/theme";
 import { h, nextTick, onMounted, watch } from "vue";
 import { BProgress } from "./bprogress"; // 进度条组件
 import "./bprogress.css"; // 进度条样式
+// @ts-ignore: 允许在没有 .vue 类型声明时导入 .vue 文件
 import BackToTop from "./components/backtotop.vue";
 import "./style.css";
 

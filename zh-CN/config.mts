@@ -1,4 +1,4 @@
-import { defineConfig } from "vitepress";
+import { DefaultTheme, defineConfig } from "vitepress";
 
 export default defineConfig({
   lang: "zh-CN",

@@ -42,14 +42,17 @@ export default defineConfig({
       },
     ],
 
-    search: {
-      provider: process.env.SEARCH_PROVIDER || "local",
-      options: {
-        appId: process.env.APPLICATION_ID || "",
-        apiKey: process.env.SEARCH_API_KEY || "",
-        indexName: process.env.INDEX_NAME || "",
-      },
-    },
+    search:
+      process.env.SEARCH_PROVIDER === "algolia"
+        ? {
+            provider: "algolia",
+            options: {
+              appId: process.env.APPLICATION_ID || "",
+              apiKey: process.env.SEARCH_API_KEY || "",
+              indexName: process.env.INDEX_NAME || "",
+            },
+          }
+        : { provider: "local" },
 
     socialLinks: [{ icon: "github", link: GITHUB_URL }],
   },
