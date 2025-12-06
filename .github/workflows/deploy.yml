@@ -83,7 +83,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: deploy
     # 默认不启用，需要时删除下面的条件或将其设为 true
-    if: env.SEARCH_PROVIDER == 'algolia'
+    if: ${{ vars.SEARCH_API_KEY != '' }}
     steps:
       - uses: actions/checkout@v4
 
