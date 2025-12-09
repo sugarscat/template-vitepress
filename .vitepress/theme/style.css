@@ -160,7 +160,7 @@ img {
  * Component: VPSidebar
  * -------------------------------------------------------------------------- */
 .VPSidebar {
-    /*scrollbar-width: thin;*/
+    scrollbar-width: thin;
 }
 
 .VPSidebar .curtain,
