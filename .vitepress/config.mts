@@ -8,7 +8,7 @@ export default defineConfig({
   lang: "en-US",
   title: "Vitepress",
   description: "A VitePress Template",
-  head: [["link", { rel: "icon", href: "./favicon.svg" }]],
+  head: [["link", { rel: "icon", href: "/favicon.svg" }]],
 
   rewrites: {
     "en/:rest*": ":rest*",
@@ -42,18 +42,10 @@ export default defineConfig({
       },
     ],
 
-    search:
-      process.env.SEARCH_PROVIDER === "algolia"
-        ? {
-            provider: "algolia",
-            options: {
-              appId: process.env.APPLICATION_ID || "",
-              apiKey: process.env.SEARCH_API_KEY || "",
-              indexName: process.env.INDEX_NAME || "",
-            },
-          }
-        : { provider: "local" },
-
+    outline: {
+      level: "deep",
+    },
+    search: { provider: "local" },
     socialLinks: [{ icon: "github", link: GITHUB_URL }],
   },
 
